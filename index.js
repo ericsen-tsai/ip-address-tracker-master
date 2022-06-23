@@ -27,7 +27,13 @@ const handleSubmit = async (e) => {
       `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${API_KEY}&ipAddress=${IPToSearch}`
     )
     const data = await response.json()
-    console.log(data)
+    contentIPAddress.innerText = data.ip
+    contentLocation.innerText = `${data.location.city}, ${data.location.region}, ${data.location.country}`
+    contentTimeZone.innerText = data.location.timezone
+    contentISP.innerText = data.isp
+    map.setView([data.location.lat, data.location.lng])
+    marker.remove()
+    marker = L.marker([data.location.lat, data.location.lng]).addTo(map)
   } catch (e) {
     console.log(e)
   }
@@ -37,11 +43,3 @@ contentForm.addEventListener("submit", handleSubmit)
 contentInput.addEventListener("focus", () => {
   contentInput.value = null
 })
-
-/*
-error response:
-{
-  "code": 422,
-  "messages": "Input correct IPv4 or IPv6 address."
-} 
-*/
