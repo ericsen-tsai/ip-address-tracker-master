@@ -1,0 +1,134 @@
+*,
+**,
+**::before,
+**::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+$clr-dark: hsl(0, 0%, 17%);
+$clr-light: hsl(0, 0%, 59%);
+$font-size-default: 1.8rem;
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  position: relative;
+}
+
+.content {
+  padding-top: 2%;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-bottom: 5%;
+  }
+
+  &__header {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &__input-box {
+    display: inline-block;
+    width: 60rem;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    border: none;
+    padding: 2rem 3rem;
+    border-radius: 2rem 0 0 2rem;
+    flex: 0 0 80%;
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: $clr-dark;
+    cursor: pointer;
+
+    &::placeholder {
+      color: $clr-light;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    border: none;
+    flex: 1;
+
+    border-radius: 0 2rem 2rem 0;
+    background-color: $clr-dark;
+    background-image: url(./images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &__info-content {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    & > *:not(:last-child) {
+      border-right: 0.1rem solid rgba($clr-light, 0.5);
+    }
+  }
+
+  &__info-box {
+    flex: 0 0 25%;
+    height: 12rem;
+  }
+
+  &__info-title {
+    color: $clr-light;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__info-value {
+    width: 100%;
+    color: $clr-dark;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+}
+
+#map {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}

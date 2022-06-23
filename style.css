@@ -1,0 +1,116 @@
+*,
+**,
+**::before,
+**::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  position: relative;
+}
+
+.content {
+  padding-top: 2%;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content > *:not(:last-child) {
+  margin-bottom: 5%;
+}
+.content__header {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+}
+.content__input-box {
+  display: inline-block;
+  width: 60rem;
+}
+.content__form {
+  display: flex;
+  justify-content: center;
+}
+.content__input {
+  border: none;
+  padding: 2rem 3rem;
+  border-radius: 2rem 0 0 2rem;
+  flex: 0 0 80%;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: hsl(0deg, 0%, 17%);
+  cursor: pointer;
+}
+.content__input::placeholder {
+  color: hsl(0deg, 0%, 59%);
+}
+.content__input:focus {
+  outline: none;
+}
+.content__button {
+  border: none;
+  flex: 1;
+  border-radius: 0 2rem 2rem 0;
+  background-color: hsl(0deg, 0%, 17%);
+  background-image: url(./images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.content__info-content {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.content__info-content > *:not(:last-child) {
+  border-right: 0.1rem solid rgba(150, 150, 150, 0.5);
+}
+.content__info-box {
+  flex: 0 0 25%;
+  height: 12rem;
+}
+.content__info-title {
+  color: hsl(0deg, 0%, 59%);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.content__info-value {
+  width: 100%;
+  color: hsl(0deg, 0%, 17%);
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+#map {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}
